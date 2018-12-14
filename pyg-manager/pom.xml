@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>pyg-parent</artifactId>
+        <groupId>yepyg</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pyg-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>pyg-manager</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>pyg-manager-interface</module>
+        <module>pyg-manager-service</module>
+    </modules>
+
+    <!--
+        服务层聚合父工程
+        1，抽取子工程公共坐标
+        2，管理子工程（打包，部署）
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>yepyg</groupId>
+            <artifactId>pyg-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

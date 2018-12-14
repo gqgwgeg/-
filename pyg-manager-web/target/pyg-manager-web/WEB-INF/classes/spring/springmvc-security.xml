@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                  http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!--1，放行静态资源及不需要安全认证的资源-->
+    <!--放行资源-->
+    <http pattern="/css/**" security="none"></http>
+    <http pattern="/js/**" security="none"></http>
+    <http pattern="/img/**" security="none"></http>
+    <http pattern="/plugins/**" security="none"></http>
+    <!--登陆成功跳转的页面-->
+    <http pattern="/login.html" security="none"></http>
+    <!--登陆失败跳转的页面-->
+    <http pattern="/login_error.html" security="none"></http>
+    <!--2，配置拦截规则-->
+    <http>
+        <!--拦截规则-->
+        <intercept-url pattern="/**" access="hasRole('ROLE_USER')"></intercept-url>
+        <!--表单登录认证-->
+        <form-login login-page="/login.html"
+                    default-target-url="/admin/index.html"
+                    always-use-default-target="true"
+                    authentication-failure-url="/login_error.html"></form-login>
+
+        <logout logout-success-url="/login.html"></logout>
+        <!--关闭跨域攻击-->
+        <csrf disabled="true"></csrf>
+        <!--iframe框架结构展示配置-->
+        <headers>
+            <frame-options policy="SAMEORIGIN"></frame-options>
+        </headers>
+    </http>
+
+
+
+    <!--3，配置认证管理器-->
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="admin" authorities="ROLE_USER"></user>
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>

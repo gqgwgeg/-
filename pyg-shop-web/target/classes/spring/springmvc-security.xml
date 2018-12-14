@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+                        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+<!--1，放行静态资源及不需要安全认证的资源-->
+    <!--放行资源-->
+    <http pattern="/css/**" security="none"></http>
+    <http pattern="/js/**" security="none"></http>
+    <http pattern="/img/**" security="none"></http>
+    <http pattern="/plugins/**" security="none"></http>
+    <http pattern="/shoplogin.html" security="none"></http>
+    <http pattern="/shoplogin_error.html" security="none"></http>
+    <http pattern="/register.html" security="none"></http>
+    <http pattern="/seller/add" security="none"></http>
+    <!--2，配置拦截规则-->
+    <http>
+        <!--拦截规则-->
+        <intercept-url pattern="/**" access="hasRole('ROLE_USER')"></intercept-url>
+        <!--表单登录认证-->
+        <form-login login-page="/shoplogin.html"
+                    default-target-url="/admin/index.html"
+                    always-use-default-target="true"
+                    authentication-failure-url="/shoplogin_error.html"></form-login>
+
+        <logout logout-success-url="/login.html"></logout>
+        <!--关闭跨域攻击-->
+        <csrf disabled="true"></csrf>
+        <!--iframe框架结构展示配置-->
+        <headers>
+            <frame-options policy="SAMEORIGIN"></frame-options>
+        </headers>
+    </http>
+
+
+    <!-- 引用dubbo 服务 -->
+    <dubbo:application name="shop-web"/>
+    <dubbo:registry address="zookeeper://192.168.66.128:2181"/>
+    <dubbo:reference id="sellerService" interface="pyg.shang.Service.SellerService"></dubbo:reference>
+    <!--//加密方式-->
+    <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></beans:bean>
+
+
+    <!--//自定义类-->
+<beans:bean id="userDetailsService" class="pyg.service.UserDetailsServiceImpl">
+    <beans:property name="sellerService" ref="sellerService"></beans:property>
+</beans:bean>
+
+
+
+
+    <!--3，配置认证管理器-->
+    <authentication-manager>
+        <!--引用自定义类-->
+        <authentication-provider user-service-ref="userDetailsService">
+            <!--引用加密-->
+            <password-encoder ref="passwordEncoder"></password-encoder>
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssm-webapp:war">
+    <output-path>$PROJECT_DIR$/ssm-mian/ssm-webapp/target</output-path>
+    <root id="archive" name="ssm-webapp-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ssm-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>
