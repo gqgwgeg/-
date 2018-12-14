@@ -196,12 +196,12 @@ public class GoodsServiceImpl implements GoodsService {
                 criteria.andSellerIdEqualTo(goods.getSellerId());
             }
             //状态比较
-            if(goods.getAuditStatus()!=null&&!"".equals(goods.getAuditStatus())){
+            if (goods.getAuditStatus() != null && !"".equals(goods.getAuditStatus())) {
                 criteria.andAuditStatusEqualTo(goods.getAuditStatus());
             }
             //商品名称
-            if(goods.getGoodsName()!=null&& !"".equals(goods.getGoodsName())){
-                criteria.andGoodsNameLike("%"+goods.getGoodsName()+"%");
+            if (goods.getGoodsName() != null && !"".equals(goods.getGoodsName())) {
+                criteria.andGoodsNameLike("%" + goods.getGoodsName() + "%");
             }
         }
 
