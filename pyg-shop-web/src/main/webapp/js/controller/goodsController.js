@@ -243,7 +243,7 @@ $scope.updateSecOption=function ($event,name,option) {
 		return newList;
     };
 
-   $scope.status=['未审核','已审核','审核通过','关闭'];
+   $scope.status=['未审核','已审核','关闭','驳回'];
 
 	$scope.itemCatList11=[];
 
@@ -251,6 +251,20 @@ $scope.updateSecOption=function ($event,name,option) {
 		itemCatService.findAll().success(function (data) {
 			for(var i=0;i<data.length;i++){
 				$scope.itemCatList11[data[i].id]=data[i].name;
+			}
+        })
+    };
+
+	$scope.shelfStatus=['下架商品',"上架商品"];
+    //商品上下架
+	$scope.updateIsMarketable=function (isMarketable) {
+		goodsService.iMarketable(isMarketable,$scope.selectIds).success(function (data) {
+			if(data.success){
+				$scope.reloadList();
+
+			}else {
+
+				alert(data.message)
 			}
         })
     }

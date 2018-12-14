@@ -3,7 +3,9 @@ package com.pyg.pojo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class TbGoods extends TbGoodsKey implements Serializable {
+public class TbGoods implements Serializable{
+    private Long id;
+
     private String sellerId;
 
     private String goodsName;
@@ -23,6 +25,8 @@ public class TbGoods extends TbGoodsKey implements Serializable {
     private Long category2Id;
 
     private Long category3Id;
+
+    private String smallPic;
 
     private BigDecimal price;
 
@@ -142,5 +146,21 @@ public class TbGoods extends TbGoodsKey implements Serializable {
 
     public void setIsDelete(String isDelete) {
         this.isDelete = isDelete == null ? null : isDelete.trim();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getSmallPic() {
+        return smallPic;
+    }
+
+    public void setSmallPic(String smallPic) {
+        this.smallPic = smallPic == null ? null : smallPic.trim();
     }
 }

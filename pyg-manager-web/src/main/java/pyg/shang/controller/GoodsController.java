@@ -3,8 +3,6 @@ package pyg.shang.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.pyg.pojo.TbGoods;
 import com.pyg.vo.Goods;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -124,20 +122,15 @@ public class GoodsController {
 		return goodsService.findPage(goods, page, rows);
 	}
 
-
-	@RequestMapping("/updateIsMarketable/{isMarketable}/{ids}")
-	public PygResult updateIsMarketable(@PathVariable String isMarketable,@PathVariable Long [] ids){
-
+	@RequestMapping("/updateStatus/{status}/{ids}")
+	public PygResult updateStatus(@PathVariable String status,@PathVariable Long[] ids){
 		try {
-			goodsService.isMarketable(isMarketable,ids);
-			return new PygResult(true,"修改成功");
+			goodsService.updateStatus(status,ids);
+			return new PygResult(true,"审核成功");
 		} catch (Exception e) {
-
 			e.printStackTrace();
-			return new PygResult(false,"修改失败");
+			return new PygResult(false,"审核失败");
 		}
 
-
 	}
-
 }
