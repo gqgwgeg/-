@@ -69,8 +69,8 @@
       <file leaf-file-name="GoodsServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../pyg-manager/pyg-manager-service/src/main/java/pyg/shang/Service/Ipml/GoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="198" column="87" lean-forward="true" selection-start-line="198" selection-start-column="87" selection-end-line="198" selection-end-column="87" />
+            <state relative-caret-position="464">
+              <caret line="209" column="5" lean-forward="true" selection-start-line="209" selection-start-column="5" selection-end-line="209" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -165,7 +165,7 @@
     <option name="jreName" value="1.8" />
     <option name="vmOptions" value="-DarchetypeCatalog=internal -Dfile.encoding=GB2312" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="833" />
     <option name="y" value="27" />
     <option name="width" value="974" />
@@ -617,15 +617,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544752656846</updated>
-      <workItem from="1544752658116" duration="1718000" />
+      <workItem from="1544752658116" duration="2045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1718000" />
+    <option name="totallyTimeSpent" value="2045000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -738,8 +738,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../pyg-manager/pyg-manager-service/src/main/java/pyg/shang/Service/Ipml/GoodsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="198" column="87" lean-forward="true" selection-start-line="198" selection-start-column="87" selection-end-line="198" selection-end-column="87" />
+        <state relative-caret-position="464">
+          <caret line="209" column="5" lean-forward="true" selection-start-line="209" selection-start-column="5" selection-end-line="209" selection-end-column="5" />
           <folding />
         </state>
       </provider>
