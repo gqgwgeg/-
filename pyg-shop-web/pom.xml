@@ -68,7 +68,10 @@
       <artifactId>zkclient</artifactId>
     </dependency>
 
-
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+    </dependency>
 
     <!-- 身份验证 -->
     <dependency>

@@ -120,6 +120,7 @@ public class GoodsController {
 	public PageResult search(@RequestBody TbGoods goods, @PathVariable int page, @PathVariable int rows  ){
 		String sellerId = SecurityContextHolder.getContext().getAuthentication().getName();
 		goods.setSellerId(sellerId);
+
 		return goodsService.findPage(goods, page, rows);
 	}
 	

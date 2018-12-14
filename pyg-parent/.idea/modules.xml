@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../pyg-common/pyg-common.iml" filepath="$PROJECT_DIR$/../pyg-common/pyg-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pyg-dao/pyg-dao.iml" filepath="$PROJECT_DIR$/../pyg-dao/pyg-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pyg-manager/pyg-manager.iml" filepath="$PROJECT_DIR$/../pyg-manager/pyg-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pyg-manager/pyg-manager-interface/pyg-manager-interface.iml" filepath="$PROJECT_DIR$/../pyg-manager/pyg-manager-interface/pyg-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pyg-manager/pyg-manager-service/pyg-manager-service.iml" filepath="$PROJECT_DIR$/../pyg-manager/pyg-manager-service/pyg-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pyg-manager-web/pyg-manager-web.iml" filepath="$PROJECT_DIR$/../pyg-manager-web/pyg-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pyg-parent.iml" filepath="$PROJECT_DIR$/pyg-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pyg-pojo/pyg-pojo.iml" filepath="$PROJECT_DIR$/../pyg-pojo/pyg-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pyg-shop-web/pyg-shop-web.iml" filepath="$PROJECT_DIR$/../pyg-shop-web/pyg-shop-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sqlgenerator/sqlgenerator.iml" filepath="$PROJECT_DIR$/../sqlgenerator/sqlgenerator.iml" />
+    </modules>
+  </component>
+</project>
