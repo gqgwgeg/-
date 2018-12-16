@@ -61,14 +61,4 @@ public interface GoodsService {
 	 */
 	public PageResult findPage(TbGoods goodsDesc, int pageNum, int pageSize);
 
-	/**
-	 * 修改状态审核
-	 */
-
-	 public void updateStatus(String status,Long[] ids);
-
-	/**
-	 * 修改上下架状态
-	 */
-	void isMarketable(String isMarketable,Long[] ids);
 }

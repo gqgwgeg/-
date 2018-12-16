@@ -9,7 +9,6 @@ import com.pyg.pojo.*;
 import com.pyg.vo.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
 import pyg.com.utis.PageResult;
-import pyg.com.utis.PygResult;
 import pyg.shang.Service.GoodsService;
 import pyg.shang.mapper.*;
 
@@ -210,43 +209,4 @@ public class GoodsServiceImpl implements GoodsService {
         return new PageResult(page.getTotal(), page.getResult());
     }
 
-    /**
-     * 商品审核
-     * @param status
-     * @param ids
-     */
-    @Override
-    public void updateStatus(String status, Long[] ids) {
-        for (Long id : ids) {
-            TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
-            //如果商品驳回,强制把商品下架设置状态0
-                        if(status.equals("2")){
-                            tbGoods.setIsMarketable("0");
-                        }
-                        //修改审核状态
-            tbGoods.setAuditStatus(status);
-            goodsMapper.updateByPrimaryKey(tbGoods);
-        }
-
-}
-
-    /**
-     * 商品上下加
-     * @param isMarketable
-     * @param ids
-     */
-    @Override
-    public void isMarketable(String isMarketable, Long[] ids) {
-        for (Long id : ids) {
-            TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
-                //判断商品是否审核,审核了才可以上架商品
-            if(tbGoods.getAuditStatus().equals("1")){
-                tbGoods.setIsMarketable(isMarketable);
-                goodsMapper.updateByPrimaryKey(tbGoods);
-            }else {
-                return ;
-            }
-
-        }
-    }
 }

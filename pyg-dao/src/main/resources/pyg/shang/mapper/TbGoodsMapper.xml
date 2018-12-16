@@ -96,13 +96,14 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="long" resultMap="BaseResultMap" >
+  <select id="selectByPrimaryKey" parameterType="com.pyg.pojo.TbGoodsKey" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from tb_goods
     where id = #{id,jdbcType=BIGINT}
+      and small_pic = #{smallPic,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pyg.pojo.TbGoods">
+  <delete id="deleteByPrimaryKey" parameterType="com.pyg.pojo.TbGoodsKey">
     delete from tb_goods
     where id = #{id,jdbcType=BIGINT}
       and small_pic = #{smallPic,jdbcType=VARCHAR}

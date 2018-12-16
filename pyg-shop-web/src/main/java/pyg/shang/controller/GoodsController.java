@@ -123,21 +123,5 @@ public class GoodsController {
 
 		return goodsService.findPage(goods, page, rows);
 	}
-
-
-	@RequestMapping("/updateIsMarketable/{isMarketable}/{ids}")
-	public PygResult updateIsMarketable(@PathVariable String isMarketable,@PathVariable Long [] ids){
-
-		try {
-			goodsService.isMarketable(isMarketable,ids);
-			return new PygResult(true,"修改成功");
-		} catch (Exception e) {
-
-			e.printStackTrace();
-			return new PygResult(false,"修改失败");
-		}
-
-
-	}
-
+	
 }
