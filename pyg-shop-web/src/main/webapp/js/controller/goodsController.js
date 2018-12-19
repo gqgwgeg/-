@@ -241,17 +241,5 @@ $scope.updateSecOption=function ($event,name,option) {
 		}
 		}
 		return newList;
-    };
-
-   $scope.status=['未审核','已审核','审核通过','关闭'];
-
-	$scope.itemCatList11=[];
-
-	$scope.itemListfindAll=function () {
-		itemCatService.findAll().success(function (data) {
-			for(var i=0;i<data.length;i++){
-				$scope.itemCatList11[data[i].id]=data[i].name;
-			}
-        })
     }
 });	

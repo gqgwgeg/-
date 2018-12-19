@@ -29,7 +29,7 @@
 	<script src="../js/controller/goodsController.js"></script>
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" ng-app="pyg" ng-controller="goodsController" ng-init="itemListfindAll();">
+<body class="hold-transition skin-red sidebar-mini" ng-app="pyg" ng-controller="goodsController">
   <!-- .box-body -->
                 
                     <div class="box-header with-border">
@@ -57,10 +57,10 @@
                                 <div class="has-feedback">
                                   状态：<select ng-model="searchEntity.auditStatus">
                                          	<option value="">全部</option>
-                                         	<option value="0">未申请</option>
-                                         	<option value="1">申请中</option>
+                                         	<option value="0">未申请</option>    
+                                         	<option value="1">申请中</option>    
                                          	<option value="2">审核通过</option>    
-                                         	<option value="3">关闭</option>
+                                         	<option value="3">已驳回</option>                                     
                                         </select>
 							                  商品名称：<input ng-model="searchEntity.goodsName">
 									<button class="btn btn-default" ng-click="reloadList();">查询</button>
@@ -91,13 +91,12 @@
 				                          <td>{{entity.id}}</td>
 									      <td>{{entity.goodsName}}</td>
 									      <td>{{entity.price}}</td>
-									      <td>{{itemCatList11[entity.category1Id]}}</td>
-									      <td>{{itemCatList11[entity.category2Id]}}</td>
-									      <td>{{itemCatList11[entity.category3Id]}}</td>
+									      <td>{{entity.category1Id}}</td>
+									      <td>{{entity.category2Id}}</td>
+									      <td>{{entity.category3Id}}</td>
 		                                  <td>
 		                                  	<span>
-		                                  		{{status[entity.auditStatus]}}
-
+		                                  		{{entity.auditStatus}}
 		                                  	</span>
 		                                  </td>		                                  
 		                                  <td class="text-center">                                          
