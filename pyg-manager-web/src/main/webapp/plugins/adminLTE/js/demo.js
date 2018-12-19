@@ -91,7 +91,7 @@
       + "<input type='checkbox' data-controlsidebar='control-sidebar-open' class='pull-right'/> "
       + "Toggle Right Sidebar Slide"
       + "</label>"
-      + "<p>Toggle between slide over content and push content effects</p>"
+      + "<p>Toggle between slide over shang and push shang effects</p>"
       + "</div>"
         //Control Sidebar Skin Toggle
       + "<div class='form-group'>"

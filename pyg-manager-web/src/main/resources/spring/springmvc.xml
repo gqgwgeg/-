@@ -29,6 +29,13 @@
     <!--放行静态资源  -->
     <mvc:default-servlet-handler/>
 
+    <!--文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--设置图片上传的大小字节为单位-->
+        <property name="maxUploadSize" value="1024000000"></property>
+        <!--设置编码-->
+        <property name="defaultEncoding" value="utf-8"></property>
+    </bean>
 
     <!-- 引用dubbo 服务 -->
     <!-- 定义表现层服务名称: 服务消费者名称 -->

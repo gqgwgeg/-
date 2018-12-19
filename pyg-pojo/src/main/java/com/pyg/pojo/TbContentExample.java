@@ -435,72 +435,72 @@ public class TbContentExample {
         }
 
         public Criteria andContentIsNull() {
-            addCriterion("content is null");
+            addCriterion("shang is null");
             return (Criteria) this;
         }
 
         public Criteria andContentIsNotNull() {
-            addCriterion("content is not null");
+            addCriterion("shang is not null");
             return (Criteria) this;
         }
 
         public Criteria andContentEqualTo(String value) {
-            addCriterion("content =", value, "content");
+            addCriterion("shang =", value, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentNotEqualTo(String value) {
-            addCriterion("content <>", value, "content");
+            addCriterion("shang <>", value, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentGreaterThan(String value) {
-            addCriterion("content >", value, "content");
+            addCriterion("shang >", value, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentGreaterThanOrEqualTo(String value) {
-            addCriterion("content >=", value, "content");
+            addCriterion("shang >=", value, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentLessThan(String value) {
-            addCriterion("content <", value, "content");
+            addCriterion("shang <", value, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentLessThanOrEqualTo(String value) {
-            addCriterion("content <=", value, "content");
+            addCriterion("shang <=", value, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentLike(String value) {
-            addCriterion("content like", value, "content");
+            addCriterion("shang like", value, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentNotLike(String value) {
-            addCriterion("content not like", value, "content");
+            addCriterion("shang not like", value, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentIn(List<String> values) {
-            addCriterion("content in", values, "content");
+            addCriterion("shang in", values, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentNotIn(List<String> values) {
-            addCriterion("content not in", values, "content");
+            addCriterion("shang not in", values, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentBetween(String value1, String value2) {
-            addCriterion("content between", value1, value2, "content");
+            addCriterion("shang between", value1, value2, "shang");
             return (Criteria) this;
         }
 
         public Criteria andContentNotBetween(String value1, String value2) {
-            addCriterion("content not between", value1, value2, "content");
+            addCriterion("shang not between", value1, value2, "shang");
             return (Criteria) this;
         }
 

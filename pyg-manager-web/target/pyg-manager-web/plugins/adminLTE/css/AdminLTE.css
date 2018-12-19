@@ -49,8 +49,8 @@ body {
   background: url('../img/boxed-bg.jpg') repeat fixed;
 }
 /*
- * Content Wrapper - contains the main content
- * ```.right-side has been deprecated as of v2.0.0 in favor of .content-wrapper  ```
+ * Content Wrapper - contains the main shang
+ * ```.right-side has been deprecated as of v2.0.0 in favor of .shang-wrapper  ```
  */
 .content-wrapper,
 .right-side,

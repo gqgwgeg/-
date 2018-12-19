@@ -64,6 +64,9 @@
           <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
           <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.4.01" />
           <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.22" />
+          <element id="archive" name="pyg-content-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="pyg-content-interface" />
+          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">

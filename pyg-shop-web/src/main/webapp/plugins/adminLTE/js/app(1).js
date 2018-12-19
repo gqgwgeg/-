@@ -72,7 +72,7 @@ $.AdminLTE.options = {
     toggleBtnSelector: "[data-toggle='control-sidebar']",
     //The sidebar selector
     selector: ".control-sidebar",
-    //Enable slide over content
+    //Enable slide over shang
     slide: true
   },
   //Box Widget Plugin. Enable this plugin
@@ -261,17 +261,17 @@ function _init() {
       var neg = $('.main-header').outerHeight() + footer_height;
       var window_height = $(window).height();
       var sidebar_height = $(".sidebar").height() || 0;
-      //Set the min-height of the content and sidebar based on the
+      //Set the min-height of the shang and sidebar based on the
       //the height of the document.
       if ($("body").hasClass("fixed")) {
-        $(".content-wrapper, .right-side").css('min-height', window_height - footer_height);
+        $(".shang-wrapper, .right-side").css('min-height', window_height - footer_height);
       } else {
         var postSetWidth;
         if (window_height >= sidebar_height) {
-          $(".content-wrapper, .right-side").css('min-height', window_height - neg);
+          $(".shang-wrapper, .right-side").css('min-height', window_height - neg);
           postSetWidth = window_height - neg;
         } else {
-          $(".content-wrapper, .right-side").css('min-height', sidebar_height);
+          $(".shang-wrapper, .right-side").css('min-height', sidebar_height);
           postSetWidth = sidebar_height;
         }
 
@@ -279,7 +279,7 @@ function _init() {
         var controlSidebar = $($.AdminLTE.options.controlSidebarOptions.selector);
         if (typeof controlSidebar !== "undefined") {
           if (controlSidebar.height() > postSetWidth)
-            $(".content-wrapper, .right-side").css('min-height', controlSidebar.height());
+            $(".shang-wrapper, .right-side").css('min-height', controlSidebar.height());
         }
 
       }
@@ -344,8 +344,8 @@ function _init() {
         }
       });
 
-      $(".content-wrapper").click(function () {
-        //Enable hide menu when clicking on the content-wrapper on small screens
+      $(".shang-wrapper").click(function () {
+        //Enable hide menu when clicking on the shang-wrapper on small screens
         if ($(window).width() <= (screenSizes.sm - 1) && $("body").hasClass("sidebar-open")) {
           $("body").removeClass('sidebar-open');
         }
@@ -481,19 +481,19 @@ function _init() {
       if ($('body').hasClass('fixed')) {
         _this._fixForFixed(sidebar);
       } else {
-        //If the content height is less than the sidebar's height, force max height
-        if ($('.content-wrapper, .right-side').height() < sidebar.height()) {
+        //If the shang height is less than the sidebar's height, force max height
+        if ($('.shang-wrapper, .right-side').height() < sidebar.height()) {
           _this._fixForContent(sidebar);
         }
       }
     },
     //Open the control sidebar
     open: function (sidebar, slide) {
-      //Slide over content
+      //Slide over shang
       if (slide) {
         sidebar.addClass('control-sidebar-open');
       } else {
-        //Push the content by adding the open class to the body instead
+        //Push the shang by adding the open class to the body instead
         //of the sidebar itself
         $('body').addClass('control-sidebar-open');
       }
@@ -534,7 +534,7 @@ function _init() {
       });
     },
     _fixForContent: function (sidebar) {
-      $(".content-wrapper, .right-side").css('min-height', sidebar.height());
+      $(".shang-wrapper, .right-side").css('min-height', sidebar.height());
     }
   };
 
@@ -579,7 +579,7 @@ function _init() {
         element.children(":first")
           .removeClass(_this.icons.collapse)
           .addClass(_this.icons.open);
-        //Hide the content
+        //Hide the shang
         box_content.slideUp(_this.animationSpeed, function () {
           box.addClass("collapsed-box");
         });
@@ -588,7 +588,7 @@ function _init() {
         element.children(":first")
           .removeClass(_this.icons.open)
           .addClass(_this.icons.collapse);
-        //Show the content
+        //Show the shang
         box_content.slideDown(_this.animationSpeed, function () {
           box.removeClass("collapsed-box");
         });
