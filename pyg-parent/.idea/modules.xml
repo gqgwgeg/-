@@ -14,7 +14,12 @@
       <module fileurl="file://$PROJECT_DIR$/pyg-parent.iml" filepath="$PROJECT_DIR$/pyg-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/../pyg-pojo/pyg-pojo.iml" filepath="$PROJECT_DIR$/../pyg-pojo/pyg-pojo.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../pyg-portal-web/pyg-portal-web.iml" filepath="$PROJECT_DIR$/../../pyg-portal-web/pyg-portal-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../pyg-search/pyg-search.iml" filepath="$PROJECT_DIR$/../../pyg-search/pyg-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../pyg-search/pyg-search-interface/pyg-search-interface.iml" filepath="$PROJECT_DIR$/../../pyg-search/pyg-search-interface/pyg-search-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../pyg-search/pyg-search-service/pyg-search-service.iml" filepath="$PROJECT_DIR$/../../pyg-search/pyg-search-service/pyg-search-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../pyg-search-web/pyg-search-web.iml" filepath="$PROJECT_DIR$/../../pyg-search-web/pyg-search-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/../pyg-shop-web/pyg-shop-web.iml" filepath="$PROJECT_DIR$/../pyg-shop-web/pyg-shop-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../pyg-solr-utils/pyg-solr-utils.iml" filepath="$PROJECT_DIR$/../../pyg-solr-utils/pyg-solr-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/../sqlgenerator/sqlgenerator.iml" filepath="$PROJECT_DIR$/../sqlgenerator/sqlgenerator.iml" />
     </modules>
   </component>

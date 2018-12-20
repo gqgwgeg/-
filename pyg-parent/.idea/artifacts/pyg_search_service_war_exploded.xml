@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="pyg-manager-service:war exploded">
-    <output-path>$PROJECT_DIR$/../pyg-manager/pyg-manager-service/target/pyg-manager-service</output-path>
+  <artifact type="exploded-war" name="pyg-search-service:war exploded">
+    <output-path>$PROJECT_DIR$/../../pyg-search/pyg-search-service/target/pyg-search-service</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="pyg-manager-service" />
+          <element id="module-output" name="pyg-search-service" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.4.RELEASE" />
@@ -32,8 +32,8 @@
           <element id="library" level="project" name="Maven: jline:jline:0.9.94" />
           <element id="library" level="project" name="Maven: io.netty:netty:3.7.0.Final" />
           <element id="library" level="project" name="Maven: com.github.sgroschupf:zkclient:0.1" />
-          <element id="archive" name="pyg-manager-interface-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="pyg-manager-interface" />
+          <element id="archive" name="pyg-search-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="pyg-search-interface" />
           </element>
           <element id="archive" name="pyg-pojo-1.0-SNAPSHOT.jar">
             <element id="module-output" name="pyg-pojo" />
@@ -90,9 +90,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/../pyg-manager/pyg-manager-service/target/pyg-manager-service/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/../../pyg-search/pyg-search-service/target/pyg-search-service/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="pyg-manager-service/web/Web" />
+      <element id="javaee-facet-resources" facet="pyg-search-service/web/Web" />
     </root>
   </artifact>
 </component>

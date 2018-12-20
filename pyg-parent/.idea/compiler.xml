@@ -15,7 +15,11 @@
         <module name="pyg-manager-web" />
         <module name="pyg-pojo" />
         <module name="pyg-portal-web" />
+        <module name="pyg-search-interface" />
+        <module name="pyg-search-service" />
+        <module name="pyg-search-web" />
         <module name="pyg-shop-web" />
+        <module name="pyg-solr-utils" />
         <module name="sqlgenerator" />
       </profile>
     </annotationProcessing>
@@ -32,7 +36,12 @@
       <module name="pyg-parent" target="1.8" />
       <module name="pyg-pojo" target="1.8" />
       <module name="pyg-portal-web" target="1.8" />
+      <module name="pyg-search" target="1.8" />
+      <module name="pyg-search-interface" target="1.8" />
+      <module name="pyg-search-service" target="1.8" />
+      <module name="pyg-search-web" target="1.8" />
       <module name="pyg-shop-web" target="1.8" />
+      <module name="pyg-solr-utils" target="1.8" />
       <module name="sqlgenerator" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -6,6 +6,8 @@
     <file type="web" url="file://$PROJECT_DIR$/../pyg-shop-web" />
     <file type="web" url="file://$PROJECT_DIR$/../../pyg-content/pyg-content-service" />
     <file type="web" url="file://$PROJECT_DIR$/../../pyg-portal-web" />
+    <file type="web" url="file://$PROJECT_DIR$/../../pyg-search-web" />
+    <file type="web" url="file://$PROJECT_DIR$/../../pyg-search/pyg-search-service" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -14,6 +16,8 @@
         <option value="$PROJECT_DIR$/../sqlgenerator/pom.xml" />
         <option value="$PROJECT_DIR$/../../pyg-portal-web/pom.xml" />
         <option value="$PROJECT_DIR$/../../pyg-content/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-search-web/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-search/pom.xml" />
       </list>
     </option>
   </component>
