@@ -1,6 +1,7 @@
 package pyg.shang.Service;
 
 import com.pyg.pojo.TbGoods;
+import com.pyg.pojo.TbItem;
 import com.pyg.vo.Goods;
 import pyg.com.utis.PageResult;
 
@@ -60,5 +61,11 @@ public interface GoodsService {
 	 * @return
 	 */
 	public PageResult findPage(TbGoods goodsDesc, int pageNum, int pageSize);
+
+    void updateStatus(String status, Long[] ids);
+
+    void isMarketable(String isMarketable, Long[] ids);
+
+    List<TbItem> findItemList(Long[] ids);
 
 }

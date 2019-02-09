@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="pyg-cas-demo1" />
+        <module name="pyg-cas-demo2" />
         <module name="pyg-common" />
         <module name="pyg-content-interface" />
         <module name="pyg-content-service" />
         <module name="pyg-dao" />
+        <module name="pyg-html" />
+        <module name="pyg-html-utils" />
         <module name="pyg-manager-interface" />
         <module name="pyg-manager-service" />
         <module name="pyg-manager-web" />
@@ -19,16 +23,25 @@
         <module name="pyg-search-service" />
         <module name="pyg-search-web" />
         <module name="pyg-shop-web" />
+        <module name="pyg-sms" />
         <module name="pyg-solr-utils" />
+        <module name="pyg-springBoot-demo" />
+        <module name="pyg-user-web" />
+        <module name="pyg-usr-interface" />
+        <module name="pyg-usr-service" />
         <module name="sqlgenerator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
+      <module name="pyg-cas-demo1" target="1.8" />
+      <module name="pyg-cas-demo2" target="1.8" />
       <module name="pyg-common" target="1.8" />
       <module name="pyg-content" target="1.8" />
       <module name="pyg-content-interface" target="1.8" />
       <module name="pyg-content-service" target="1.8" />
       <module name="pyg-dao" target="1.8" />
+      <module name="pyg-html" target="1.8" />
+      <module name="pyg-html-utils" target="1.8" />
       <module name="pyg-manager" target="1.8" />
       <module name="pyg-manager-interface" target="1.8" />
       <module name="pyg-manager-service" target="1.8" />
@@ -41,7 +54,13 @@
       <module name="pyg-search-service" target="1.8" />
       <module name="pyg-search-web" target="1.8" />
       <module name="pyg-shop-web" target="1.8" />
+      <module name="pyg-sms" target="1.8" />
       <module name="pyg-solr-utils" target="1.8" />
+      <module name="pyg-springBoot-demo" target="1.8" />
+      <module name="pyg-user" target="1.8" />
+      <module name="pyg-user-web" target="1.8" />
+      <module name="pyg-usr-interface" target="1.8" />
+      <module name="pyg-usr-service" target="1.8" />
       <module name="sqlgenerator" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -12,6 +12,7 @@ import pyg.com.utis.PageResult;
 import pyg.shang.Service.GoodsService;
 import pyg.shang.mapper.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -179,7 +180,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public void delete(Long[] ids) {
         for (Long id : ids) {
-            goodsMapper.deleteByPrimaryKey(id);
+
+            TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
+            tbGoods.setAuditStatus("0");
+            goodsMapper.updateByPrimaryKey(tbGoods);
         }
     }
 
@@ -203,10 +207,54 @@ public class GoodsServiceImpl implements GoodsService {
             if (goods.getGoodsName() != null && !"".equals(goods.getGoodsName())) {
                 criteria.andGoodsNameLike("%" + goods.getGoodsName() + "%");
             }
+            criteria.andIsDeleteEqualTo("1");
         }
 
         Page<TbGoods> page = (Page<TbGoods>) goodsMapper.selectByExample(example);
         return new PageResult(page.getTotal(), page.getResult());
+    }
+
+    @Override
+    public void updateStatus(String status, Long[] ids) {
+
+        //循环ids
+        for (Long id : ids) {
+            //根据id查询商品对象
+            TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
+            //设置状态
+            tbGoods.setAuditStatus(status);
+
+            //更新
+            goodsMapper.updateByPrimaryKey(tbGoods);
+
+        }
+
+
+    }
+
+    @Override
+    public void isMarketable(String isMarketable, Long[] ids) {
+
+        for (Long id : ids) {
+            TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
+
+            tbGoods.setIsMarketable(isMarketable);
+            goodsMapper.updateByPrimaryKey(tbGoods);
+        }
+    }
+
+    @Override
+    public List<TbItem> findItemList(Long[] ids) {
+       List<TbItem> itemlist = new ArrayList<>();
+        for (Long id : ids) {
+            TbItemExample example = new TbItemExample();
+            TbItemExample.Criteria criteria = example.createCriteria();
+            //设置条件
+            criteria.andGoodsIdEqualTo(id);
+            List<TbItem> list = itemMapper.selectByExample(example);
+            itemlist.addAll(list);
+        }
+        return itemlist;
     }
 
 }

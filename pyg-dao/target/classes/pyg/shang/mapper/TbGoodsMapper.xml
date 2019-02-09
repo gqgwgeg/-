@@ -3,7 +3,7 @@
 <mapper namespace="pyg.shang.mapper.TbGoodsMapper">
   <resultMap id="BaseResultMap" type="com.pyg.pojo.TbGoods">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <id column="small_pic" jdbcType="VARCHAR" property="smallPic" />
+
     <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
     <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
     <result column="default_item_id" jdbcType="BIGINT" property="defaultItemId" />
@@ -78,7 +78,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, small_pic, seller_id, goods_name, default_item_id, audit_status, is_marketable, 
+    id,  seller_id, goods_name, default_item_id, audit_status, is_marketable,
     brand_id, caption, category1_id, category2_id, category3_id, price, type_template_id, 
     is_enable_spec, is_delete
   </sql>
@@ -96,17 +96,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="com.pyg.pojo.TbGoodsKey" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from tb_goods
     where id = #{id,jdbcType=BIGINT}
-      and small_pic = #{smallPic,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pyg.pojo.TbGoodsKey">
+  <delete id="deleteByPrimaryKey" parameterType="com.pyg.pojo.TbGoods">
     delete from tb_goods
     where id = #{id,jdbcType=BIGINT}
-      and small_pic = #{smallPic,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.pyg.pojo.TbGoodsExample">
     delete from tb_goods
@@ -115,29 +113,26 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.pyg.pojo.TbGoods" useGeneratedKeys="true" keyProperty="id">
-    insert into tb_goods (id, small_pic, seller_id, 
-      goods_name, default_item_id, audit_status, 
-      is_marketable, brand_id, caption, 
-      category1_id, category2_id, category3_id, 
-      price, type_template_id, is_enable_spec, 
+    insert into tb_goods (id,  seller_id,
+      goods_name, default_item_id, audit_status,
+      is_marketable, brand_id, caption,
+      category1_id, category2_id, category3_id,
+      price, type_template_id, is_enable_spec,
       is_delete)
-    values (#{id,jdbcType=BIGINT}, #{smallPic,jdbcType=VARCHAR}, #{sellerId,jdbcType=VARCHAR}, 
-      #{goodsName,jdbcType=VARCHAR}, #{defaultItemId,jdbcType=BIGINT}, #{auditStatus,jdbcType=VARCHAR}, 
-      #{isMarketable,jdbcType=VARCHAR}, #{brandId,jdbcType=BIGINT}, #{caption,jdbcType=VARCHAR}, 
-      #{category1Id,jdbcType=BIGINT}, #{category2Id,jdbcType=BIGINT}, #{category3Id,jdbcType=BIGINT}, 
-      #{price,jdbcType=DECIMAL}, #{typeTemplateId,jdbcType=BIGINT}, #{isEnableSpec,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{sellerId,jdbcType=VARCHAR},
+      #{goodsName,jdbcType=VARCHAR}, #{defaultItemId,jdbcType=BIGINT}, #{auditStatus,jdbcType=VARCHAR},
+      #{isMarketable,jdbcType=VARCHAR}, #{brandId,jdbcType=BIGINT}, #{caption,jdbcType=VARCHAR},
+      #{category1Id,jdbcType=BIGINT}, #{category2Id,jdbcType=BIGINT}, #{category3Id,jdbcType=BIGINT},
+      #{price,jdbcType=DECIMAL}, #{typeTemplateId,jdbcType=BIGINT}, #{isEnableSpec,jdbcType=VARCHAR},
       #{isDelete,jdbcType=VARCHAR})
   </insert>
-
   <insert id="insertSelective" parameterType="com.pyg.pojo.TbGoods" useGeneratedKeys="true" keyProperty="id">
     insert into tb_goods
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="smallPic != null">
-        small_pic,
-      </if>
+
       <if test="sellerId != null">
         seller_id,
       </if>
@@ -185,9 +180,7 @@
       <if test="id != null">
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="smallPic != null">
-        #{smallPic,jdbcType=VARCHAR},
-      </if>
+
       <if test="sellerId != null">
         #{sellerId,jdbcType=VARCHAR},
       </if>
@@ -232,7 +225,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.pyg.pojo.TbGoodsExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.pyg.pojo.TbGoodsExample" resultType="java.lang.Integer">
     select count(*) from tb_goods
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -244,9 +237,7 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.smallPic != null">
-        small_pic = #{record.smallPic,jdbcType=VARCHAR},
-      </if>
+
       <if test="record.sellerId != null">
         seller_id = #{record.sellerId,jdbcType=VARCHAR},
       </if>
@@ -297,7 +288,7 @@
   <update id="updateByExample" parameterType="map">
     update tb_goods
     set id = #{record.id,jdbcType=BIGINT},
-      small_pic = #{record.smallPic,jdbcType=VARCHAR},
+
       seller_id = #{record.sellerId,jdbcType=VARCHAR},
       goods_name = #{record.goodsName,jdbcType=VARCHAR},
       default_item_id = #{record.defaultItemId,jdbcType=BIGINT},
@@ -363,7 +354,7 @@
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
-      and small_pic = #{smallPic,jdbcType=VARCHAR}
+
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pyg.pojo.TbGoods">
     update tb_goods
@@ -382,6 +373,6 @@
       is_enable_spec = #{isEnableSpec,jdbcType=VARCHAR},
       is_delete = #{isDelete,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
-      and small_pic = #{smallPic,jdbcType=VARCHAR}
+
   </update>
 </mapper>

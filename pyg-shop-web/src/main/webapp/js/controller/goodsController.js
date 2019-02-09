@@ -99,7 +99,7 @@ app.controller('goodsController',function($scope,$controller,
 
     })
 	//初始化对象组装参数 itemImages 
-	$scope.entity={tbGoodsDesc:{itemImages:[],customAttributeItems:[],specificationItems:[]}};
+	$scope.entity={TbGoodsDesc:{itemImages:[],customAttributeItems:[],specificationItems:[]}};
 
 //监控分类模板id的变化 ,查询出模板对象获取当前分类中的品牌数据,此时模板当中存储了当前分类的所有品牌
 	$scope.$watch('entity.TbGoods.typeTemplateId',function (newValue, oldValue) {
@@ -109,7 +109,7 @@ app.controller('goodsController',function($scope,$controller,
 			//把字符串json 转成 json对象
 			$scope.typeTemplate.brandIds=JSON.parse($scope.typeTemplate.brandIds);
 			//js字符串数组转换成对象
-			$scope.entity.tbGoodsDesc.customAttributeItems=JSON.parse($scope.typeTemplate.customAttributeItems);
+			$scope.entity.TbGoodsDesc.customAttributeItems=JSON.parse($scope.typeTemplate.customAttributeItems);
         })
 		typeTemplateService.findSpecList(newValue).success(function (data) {
 
@@ -158,7 +158,7 @@ app.controller('goodsController',function($scope,$controller,
 
 //组装图片地址 颜色参数
 	$scope.add_image_entity=function () {
-		$scope.entity.tbGoodsDesc.itemImages.push($scope.image_entity);
+		$scope.entity.TbGoodsDesc.itemImages.push($scope.image_entity);
     }
 
 
@@ -177,7 +177,7 @@ app.controller('goodsController',function($scope,$controller,
 $scope.updateSecOption=function ($event,name,option) {
     //判断是否是选中规格中的属性值
 	//获取商品描述中的 规格数据
-        var specList= $scope.entity.tbGoodsDesc.specificationItems;
+        var specList= $scope.entity.TbGoodsDesc.specificationItems;
 
         var obj= $scope.searchSpecOption(specList,'attributeName',name);
       //判断是否为空
@@ -196,7 +196,7 @@ $scope.updateSecOption=function ($event,name,option) {
 			}
 		}else {
         	   //第一次选中时 他是空数组 没有值需要初始化对值的添加
-            $scope.entity.tbGoodsDesc.specificationItems.push({"attributeName":name,"attributeValue":[option]});
+            $scope.entity.TbGoodsDesc.specificationItems.push({"attributeName":name,"attributeValue":[option]});
 		}
 }
 //定义一个方法,根据选中的规格选项动态生成sku行
@@ -207,7 +207,7 @@ $scope.updateSecOption=function ($event,name,option) {
 		$scope.entity.items=[{spec:{},price:0,num:9999,status:"1",isDefault:"0"}]
 
 		//获取选中的规格选项数据
-       var specList= $scope.entity.tbGoodsDesc.specificationItems;
+       var specList= $scope.entity.TbGoodsDesc.specificationItems;
 
 		//判断规格选项是否为空
          if(specList.length==0){
@@ -241,5 +241,31 @@ $scope.updateSecOption=function ($event,name,option) {
 		}
 		}
 		return newList;
+    }
+
+      $scope.is=['下架','上架'];
+     $scope.status=['未审核','已审核','审核未通过','关闭'];
+	//定义数组来存储分类名称
+	$scope.itemCatList=[];
+	//查询所有获取分类名称
+	$scope.findCatAllList=function () {
+		itemCatService.findAll().success(function (data) {
+			for(var i=0;i<data.length;i++){
+                $scope.itemCatList[data[i].id]=data[i].name;
+			}
+        })
+    }
+    
+    //商品上下架
+	$scope.isMarketable=function (isMarketable) {
+		goodsService.isMarketable(isMarketable,$scope.selectIds).success(function (data) {
+			if(data.success){
+                   //刷新列表
+				$scope.reloadList();
+			}else {
+				alert(data.message);
+			}
+
+        })
     }
 });	

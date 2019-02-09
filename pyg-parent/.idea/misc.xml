@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../pyg-content/pyg-content-service" />
     <file type="web" url="file://$PROJECT_DIR$/../pyg-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/../pyg-manager/pyg-manager-service" />
     <file type="web" url="file://$PROJECT_DIR$/../pyg-shop-web" />
+    <file type="web" url="file://$PROJECT_DIR$/../../pyg-cas-demo1" />
+    <file type="web" url="file://$PROJECT_DIR$/../../pyg-cas-demo2" />
     <file type="web" url="file://$PROJECT_DIR$/../../pyg-content/pyg-content-service" />
+    <file type="web" url="file://$PROJECT_DIR$/../../pyg-html" />
     <file type="web" url="file://$PROJECT_DIR$/../../pyg-portal-web" />
     <file type="web" url="file://$PROJECT_DIR$/../../pyg-search-web" />
     <file type="web" url="file://$PROJECT_DIR$/../../pyg-search/pyg-search-service" />
+    <file type="web" url="file://$PROJECT_DIR$/../../pyg-user-web" />
+    <file type="web" url="file://$PROJECT_DIR$/../../pyg-user/pyg-usr-service" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -18,7 +24,22 @@
         <option value="$PROJECT_DIR$/../../pyg-content/pom.xml" />
         <option value="$PROJECT_DIR$/../../pyg-search-web/pom.xml" />
         <option value="$PROJECT_DIR$/../../pyg-search/pom.xml" />
+        <option value="$PROJECT_DIR$/../pyg-content/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-html-utils/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-html/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-springBoot-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-user-web/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-user/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-cas-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/../../pyg-cas-demo2/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../pyg-content/pom.xml" />
+        <option value="$PROJECT_DIR$/../pyg-content/pyg-content-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/../pyg-content/pyg-content-service/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

@@ -32,5 +32,10 @@ app.service('goodsService',function($http){
 	//搜索
 	this.search=function(page,rows,searchEntity){
 		return $http.post('../goods/search/'+page+"/"+rows,searchEntity);
-	}    	
+	}
+
+    //上架上下架
+    this.isMarketable=function(isMarketable,ids){
+        return $http.get('../goods/isMarketable/'+isMarketable+'/'+ids);
+    }
 });

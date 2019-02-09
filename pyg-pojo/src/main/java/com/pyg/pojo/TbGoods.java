@@ -3,7 +3,9 @@ package com.pyg.pojo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class TbGoods extends TbGoodsKey implements Serializable {
+public class TbGoods implements Serializable {
+    private Long id;
+
     private String sellerId;
 
     private String goodsName;
@@ -32,12 +34,22 @@ public class TbGoods extends TbGoodsKey implements Serializable {
 
     private String isDelete;
 
+
+    public Long getId() {
+        return id;
+    }
+
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getSellerId() {
         return sellerId;
     }
 
     public void setSellerId(String sellerId) {
-        this.sellerId = sellerId == null ? null : sellerId.trim();
+        this.sellerId = sellerId;
     }
 
     public String getGoodsName() {
@@ -45,7 +57,7 @@ public class TbGoods extends TbGoodsKey implements Serializable {
     }
 
     public void setGoodsName(String goodsName) {
-        this.goodsName = goodsName == null ? null : goodsName.trim();
+        this.goodsName = goodsName;
     }
 
     public Long getDefaultItemId() {
@@ -61,7 +73,7 @@ public class TbGoods extends TbGoodsKey implements Serializable {
     }
 
     public void setAuditStatus(String auditStatus) {
-        this.auditStatus = auditStatus == null ? null : auditStatus.trim();
+        this.auditStatus = auditStatus;
     }
 
     public String getIsMarketable() {
@@ -69,7 +81,7 @@ public class TbGoods extends TbGoodsKey implements Serializable {
     }
 
     public void setIsMarketable(String isMarketable) {
-        this.isMarketable = isMarketable == null ? null : isMarketable.trim();
+        this.isMarketable = isMarketable;
     }
 
     public Long getBrandId() {
@@ -85,7 +97,7 @@ public class TbGoods extends TbGoodsKey implements Serializable {
     }
 
     public void setCaption(String caption) {
-        this.caption = caption == null ? null : caption.trim();
+        this.caption = caption;
     }
 
     public Long getCategory1Id() {
@@ -133,7 +145,7 @@ public class TbGoods extends TbGoodsKey implements Serializable {
     }
 
     public void setIsEnableSpec(String isEnableSpec) {
-        this.isEnableSpec = isEnableSpec == null ? null : isEnableSpec.trim();
+        this.isEnableSpec = isEnableSpec;
     }
 
     public String getIsDelete() {
@@ -141,6 +153,6 @@ public class TbGoods extends TbGoodsKey implements Serializable {
     }
 
     public void setIsDelete(String isDelete) {
-        this.isDelete = isDelete == null ? null : isDelete.trim();
+        this.isDelete = isDelete;
     }
 }

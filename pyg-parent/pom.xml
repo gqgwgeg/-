@@ -13,6 +13,7 @@
         <module>../pyg-shop-web</module>
         <module>../pyg-common</module>
         <module>../../pyg-solr-utils</module>
+        <module>../../pyg-sms</module>
 
     </modules>
 

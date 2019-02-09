@@ -2,16 +2,16 @@ package pyg.shang.mapper;
 
 import com.pyg.pojo.TbGoods;
 import com.pyg.pojo.TbGoodsExample;
-import com.pyg.pojo.TbGoodsKey;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface TbGoodsMapper {
-    long countByExample(TbGoodsExample example);
+    int countByExample(TbGoodsExample example);
 
     int deleteByExample(TbGoodsExample example);
 
-    int deleteByPrimaryKey(Long  id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(TbGoods record);
 

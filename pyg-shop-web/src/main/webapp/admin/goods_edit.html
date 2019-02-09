@@ -149,7 +149,7 @@
 											<th class="sorting">图片</th>
 										</thead>
 										<tbody>
-										<tr ng-repeat="image in entity.tbGoodsDesc.itemImages">
+										<tr ng-repeat="image in entity.TbGoodsDesc.itemImages">
 											<td><input  type="checkbox" ></td>
 											<td>
 												{{image.color}}
@@ -169,7 +169,7 @@
 							<!--扩展属性-->
 							<div class="tab-pane" id="customAttribute">
 								<div class="row data-type">
-									<div ng-repeat="cus in entity.tbGoodsDesc.customAttributeItems">
+									<div ng-repeat="cus in entity.TbGoodsDesc.customAttributeItems">
 										<div class="col-md-2 title">{{cus.text}}</div>
 										<div class="col-md-10 data">
 											<input class="form-control" ng-model="cus.value" placeholder="扩展属性">
@@ -211,7 +211,7 @@
 										<table class="table table-bordered table-striped table-hover dataTable">
 											<thead>
 											<tr>
-												<th class="sorting" ng-repeat="item in entity.tbGoodsDesc.specificationItems">{{item.attributeName}}</th>
+												<th class="sorting" ng-repeat="item in entity.TbGoodsDesc.specificationItems">{{item.attributeName}}</th>
 												<th class="sorting">价格</th>
 												<th class="sorting">库存</th>
 												<th class="sorting">是否启用</th>
@@ -220,7 +220,7 @@
 											</thead>
 											<tbody>
 											<tr ng-repeat="sku in entity.items">
-												<td ng-repeat="item in entity.tbGoodsDesc.specificationItems">
+												<td ng-repeat="item in entity.TbGoodsDesc.specificationItems">
 													{{sku.spec[item.attributeName]}}
 												</td>
 												<td>
@@ -290,6 +290,7 @@
 												</td>
 												<td>
 													<img src="{{image_entity.url}}" width="200px" height="200px">
+
 												</td>
 											</tr>
 										</table>

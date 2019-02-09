@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--创建连接工厂-->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <constructor-arg name="brokerURL" value="tcp://192.168.66.128:61616"></constructor-arg>
+    </bean>
+    <!--创建jsm 工厂对象 管理mq消息服务器-->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="targetConnectionFactory"></property>
+    </bean>
+    <!--创建spring jms提供的模板对象 ,发送消息-->
+    <bean class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"></property>
+    </bean>
+    <!--&lt;!&ndash;创建发送模式:点对点模式&ndash;&gt;-->
+    <!--<bean  id="queue" class="org.apache.activemq.command.ActiveMQQueue">-->
+        <!--<constructor-arg value="peerToPeer"></constructor-arg>-->
+    <!--</bean>-->
+    <!--创建订阅模式同步索引库和html静态页面-->
+    <bean id="index_html" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="index_html_topic"></constructor-arg>
+    </bean>
+
+    <bean id="solr_dele" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="solr_index_dele"></constructor-arg>
+    </bean>
+
+
+</beans>

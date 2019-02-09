@@ -57,7 +57,6 @@
           <element id="library" level="project" name="Maven: com.github.miemiedev:mybatis-paginator:1.2.15" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.32" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.9" />
-          <element id="library" level="project" name="Maven: com.yepyg:pyg-pojo:1.0-SNAPSHOT" />
           <element id="library" level="project" name="Maven: org.apache.activemq:activemq-client:5.15.8" />
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" />
           <element id="library" level="project" name="Maven: org.fusesource.hawtbuf:hawtbuf:1.11" />
